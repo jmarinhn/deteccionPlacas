@@ -8,7 +8,7 @@ from imutils.video import VideoStream
 from imutils.video import FPS
 from imutils.object_detection import non_max_suppression
 
-#Ruta a la instalación de Tesseract en MacOS.
+##Ruta a la instalación de Tesseract en MacOS.
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract'
 
 
