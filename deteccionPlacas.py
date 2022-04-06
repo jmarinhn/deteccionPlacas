@@ -137,7 +137,7 @@ if __name__ == '__main__':
             # regionPlaca
             regionPlaca = orig[start_y:end_y, start_x:end_x]
 
-            # recognizing text
+            # OCR
             config = '-l eng --oem 1 --psm 6'
             text = pytesseract.image_to_string(regionPlaca, config=config)
 
