@@ -8,7 +8,7 @@ from imutils.video import VideoStream
 from imutils.video import FPS
 from imutils.object_detection import non_max_suppression
 
-#Ruta a la instalación de Tesseract en MacOS.
+##Ruta a la instalación de Tesseract en MacOS.
 pytesseract.pytesseract.tesseract_cmd = r'/opt/homebrew/Cellar/tesseract/5.1.0/bin/tesseract'
 
 
@@ -137,13 +137,15 @@ if __name__ == '__main__':
             # regionPlaca
             regionPlaca = orig[start_y:end_y, start_x:end_x]
 
-            # recognizing text
+            # OCR
             config = '-l eng --oem 1 --psm 6'
             text = pytesseract.image_to_string(regionPlaca, config=config)
 
             if text != "":
                 if len(text)==8: 
                     print(f"Placa detectada: {text}")
+                    with open('placas.txt', 'w', encoding='utf-8') as f:
+                        f.writelines('\n'.join(text))
                     cv2.rectangle(orig, (start_x, start_y), (end_x, end_y), (0, 255, 0), 2)
                     cv2.putText(orig, text, (start_x, start_y - 20),
                                 cv2.FONT_HERSHEY_COMPLEX, 1.2, (34, 226, 66), 3)
@@ -162,8 +164,8 @@ if __name__ == '__main__':
             break
 
     fps.stop()
-    print(f"[INFO] elapsed time {round(fps.elapsed(), 2)}")
-    print(f"[INFO] approx. FPS : {round(fps.fps(), 2)}")
+    print(f"[INFO] Tiempo de ejecución: {round(fps.elapsed(), 2)}")
+    print(f"Gracias por utilizar nuestro software!")
 
     if not args.get('video', False):
         vs.stop()
