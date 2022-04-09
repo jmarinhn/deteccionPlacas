@@ -143,7 +143,7 @@ if __name__ == '__main__':
 
             if text != "":
                 if len(text)==8: 
-                    print(f"Placa detectada: {text}")
+                    print(f"Placa detectada: {text} \n")
                     with open('placas.txt', 'w', encoding='utf-8') as f:
                         f.writelines(text)
                     cv2.rectangle(orig, (start_x, start_y), (end_x, end_y), (0, 255, 0), 2)
