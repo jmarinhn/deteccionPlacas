@@ -145,7 +145,7 @@ if __name__ == '__main__':
                 if len(text)==8: 
                     print(f"Placa detectada: {text}")
                     with open('placas.txt', 'w', encoding='utf-8') as f:
-                        f.writelines('\n'.join(text))
+                        f.writelines(text)
                     cv2.rectangle(orig, (start_x, start_y), (end_x, end_y), (0, 255, 0), 2)
                     cv2.putText(orig, text, (start_x, start_y - 20),
                                 cv2.FONT_HERSHEY_COMPLEX, 1.2, (34, 226, 66), 3)
@@ -164,7 +164,7 @@ if __name__ == '__main__':
             break
 
     fps.stop()
-    print(f"[INFO] Tiempo de ejecución: {round(fps.elapsed(), 2)}")
+    print(f"[INFO] Tiempo de ejecución: {round(fps.elapsed(), 2)} s")
     print(f"Gracias por utilizar nuestro software!")
 
     if not args.get('video', False):
