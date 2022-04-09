@@ -1,0 +1,11 @@
+---------------------
+    INSTRUCTIONS
+---------------------
+
+run the file with extension .py
+ python3 deteccionPlacas.py 
+
+add east param
+ python3 deteccionPlacas.py --east frozen_east_text_detection.pb
+
+search your path tesseract in your computer, this project contain path unique for machine
