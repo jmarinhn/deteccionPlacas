@@ -28,11 +28,19 @@ titulo["justify"] = "center"
 titulo["text"] = "Detector de Placas"
 titulo.place(x=160,y=50,width=292,height=32)
 
-btn = Button(window,text="Iniciar deteccion",font=("Arial",12),background="gray",fg="white", command=iniciar,)
-btn2 = Button(window,text="Salir",font=("Arial",12),background="red",fg="white",command=salir)
+subtitulo=Label(window)
+ft = tkFont.Font(family='Arial',size=15)
+subtitulo["font"] = ft
+subtitulo["fg"] = "#ffffff"
+subtitulo["justify"] = "center"
+subtitulo["text"] = "Proyecto Final de TI-209"
+subtitulo.place(x=160,y=80,width=292,height=32)
 
-btn.place(x=240,y=150,width=144,height=30)
-btn2.place(x=265,y=260,width=70,height=25)
+btn = Button(window,text="Iniciar deteccion",font=("Arial",12),background="gray",fg="black", command=iniciar,)
+btn2 = Button(window,text="Salir",font=("Arial",12),background="red",fg="black",command=salir)
+
+btn.place(x=230,y=180,width=144,height=30)
+btn2.place(x=263,y=260,width=70,height=25)
 
 integrantes = ('Grupo #1', 'Josue Marin', 'Jeffrey Herrera', 'Sergio Benitez')
 integrantes_var = StringVar(value=integrantes)
